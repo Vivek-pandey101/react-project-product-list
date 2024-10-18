@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Red Hat Text, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: hsl(20, 50%, 98%);
+}
+
+.item-container {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.products {
+  width: 70%;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.items .item {
+  width: 200px;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.image-container{
+  position: relative;
+  display: flex;
+}
+
+.image-container .button,
+.image-container .quantity-controls{
+  position: absolute;
+  top: 90%;
+  height: 40px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  border-radius: 30px;
+  border: 2px solid hsl(14, 25%, 72%);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.image-container .quantity-controls{
+  cursor: auto;
+  background: hsl(14, 86%, 42%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.quantity-controls button{
+  cursor: pointer;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-weight: 600;
+}
+
+.quantity-controls button:hover{
+  background: white;
+  color: hsl(14, 86%, 42%);
+}
+
+.image-container .button:hover{
+  border: 2px solid hsl(12, 20%, 44%);
+  color: hsl(12, 20%, 44%);
+}
+
+.image-container .button img{
+  height: 20px;
+  width: 20px;
+}
+
+.details{
+  margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .items{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.details span{
+  color: hsl(14, 25%, 72%);
+}
+
+.details h5{
+  color: hsl(14, 65%, 9%);
+}
+
+.details p{
+  color: hsl(14, 86%, 42%);
+  font-weight: 900;
+}
+
+@media (max-width: 750px) {
+  .item-container{
+    flex-direction: column;
+  }
+  .items{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 675px) {
+  .item-container{
+    flex-direction: column;
+  }
+  .products{
+    width: 100%;
+  }
+  .items{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .item-container{
+    flex-direction: column;
+  }
+  .products{
+    width: 100%;
+  }
+  .items{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .item{
+    width: 100%;
+  }
+}
